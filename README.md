@@ -248,8 +248,9 @@ alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
 #### Get saved WiFi keys
 
 ```sh
-alias wifikey="sudo grep -r '^psk=' /etc/NetworkManager/system-connections/"
+alias wifikey="sudo cat /etc/NetworkManager/system-connections/* | grep -e ^ssid -e ^psk"
 # Usage (requires sudo)
+# print out all used wifi network names and keys 
 # wifikey
 ```
 
